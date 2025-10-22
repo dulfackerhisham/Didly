@@ -1,0 +1,5 @@
+#Common ignores
+node_modules/
+
+#use relative path for specific BE or FE
+# client/config.json
