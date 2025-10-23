@@ -1,5 +1,7 @@
 #Common ignores
+# **for folders use "/" and for files filename only**
 node_modules/
+.env
 
 #use relative path for specific BE or FE
 # client/config.json
