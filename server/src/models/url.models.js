@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const urlSchema = new mongoose.Schema({
+const url = new mongoose.Schema({
     longUrl: {
         type: String,
         required: true,
@@ -17,4 +17,4 @@ const urlSchema = new mongoose.Schema({
     },
 })
 
-export const url = mongoose.model("url", urlSchema);
+export const urlSchema = mongoose.model("urlSchema", url);
