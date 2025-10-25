@@ -5,6 +5,7 @@ import { connectDb } from './src/config/mongo.config.js';
 import { urlSchema } from './src/models/url.models.js';
 import urlRoute from './src/routes/url.routes.js'
 import { redirectUrl } from './src/controller/url.controller.js';
+import { errorHandler } from './src/utils/errorHandler.js';
 
 dotenv.config();
 
@@ -22,6 +23,8 @@ app.get("/:id", redirectUrl);
 app.get("/api/healthy", (req, res) => {
     res.send("Healthy and live" )
 })
+
+app.use(errorHandler);
 
 const startServer = async () => {
     connectDb();
