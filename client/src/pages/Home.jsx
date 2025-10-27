@@ -3,7 +3,7 @@ import UrlForm from '../components/UrlForm'
 
 const Home = () => {
   return (
-    <div>
+    <div className='bg-amber-600 w-screen h-screen '>
         <UrlForm />
     </div>
   )
