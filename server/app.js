@@ -4,19 +4,24 @@ import { nanoid } from 'nanoid'
 import { connectDb } from './src/config/mongo.config.js';
 import { urlSchema } from './src/models/url.models.js';
 import urlRoute from './src/routes/url.routes.js'
+import authRoute from './src/routes/auth.routes.js'
 import { redirectUrl } from './src/controller/url.controller.js';
 import { errorHandler } from './src/utils/errorHandler.js';
+import cors from 'cors'
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000
 
+app.use(cors());
+
 app.use(express.json());
-// app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({extended: true}));
 
+
+app.use("/api/auth", authRoute);
 app.use("/api/url", urlRoute);
-
 
 app.get("/:id", redirectUrl);
 
